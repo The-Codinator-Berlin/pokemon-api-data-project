@@ -1,0 +1,11 @@
+body{
+    background-image: url(./img/poke-pixel.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+h1 {
+
+    font-size: 5rem;
+}
