@@ -53,3 +53,10 @@ h1 {
     justify-content: center;
     padding:2em;
 }
+
+.info-b {
+    border-radius: 60%;
+    size: 1rem;
+    background-color: #424949;
+    color: white;
+}
