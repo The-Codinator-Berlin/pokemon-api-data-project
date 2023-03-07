@@ -9,6 +9,8 @@ body{
 h1 {
 
     font-size: 3rem;
+    text-align: center;
+    padding-left: 60px;
 }
 
 .logo {
@@ -59,4 +61,8 @@ h1 {
     size: 1rem;
     background-color: #424949;
     color: white;
+}
+
+#more {
+    display: none;
 }
