@@ -1,3 +1,14 @@
+// fetch("https://api.pokemontcg.io/v2/cards")
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+  
+
+
 const allPokeCards = data.data;
 // console.log(allPokeCards.length);
 const typeButtons = document.getElementsByName("myRadioField");
@@ -55,5 +66,6 @@ function myFunction() {
     moreText.style.display = "inline";
   }
 }
+
 
 
