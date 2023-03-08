@@ -1,0 +1,13 @@
+.info-txt {
+    margin-top: 3em;
+    padding: 6em;
+    border: solid white 2px;
+    width: 100%;
+    background-color: #424949;
+    display: flex;
+    justify-content: center;
+}
+
+#myBtn {
+    color: rgba(255, 0, 0, 0.616);
+}
