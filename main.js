@@ -1,27 +1,28 @@
-// fetch("https://api.pokemontcg.io/v2/cards")
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
-  
-
-
-const allPokeCards = data.data;
-// console.log(allPokeCards.length);
-const typeButtons = document.getElementsByName("myRadioField");
-const cardsContainer = document.getElementById("cards-container");
-const typeSelectionArea = document.getElementById("radio-container");
+function fetchData() {
+  fetch("https://api.pokemontcg.io/v2/cards")
+  .then((response) => { return response.json()})
+  .then((test) => {
+    console.log("test", test);
+    updateCardList(test.data);
+    addEvents(test.data)
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+fetchData()
 
 // listen for user changes to radio buttons (card type)
-typeSelectionArea.addEventListener("input", updateCardList);
+function addEvents(allPokeCards) {
+  const typeSelectionArea = document.getElementById("radio-container");
+  typeSelectionArea.addEventListener("input", function () {
+  updateCardList(allPokeCards)
+});
+}
 
 // update list when loading page
-updateCardList();
-
-function updateCardList() {
+function updateCardList(allPokeCards) {
+  const typeButtons = document.getElementsByName("myRadioField");
     // Loop is assigning button checked to variable selectedType
     let selectedType;
     for (let i = 0; i < typeButtons.length; i++) {
@@ -30,12 +31,12 @@ function updateCardList() {
         }
     }
 
-    // console.log(selectedType);
+  
     // Filter cards based on value selected
     const filteredCards = allPokeCards.filter(function (card) {
         return card.types.includes(selectedType);
     });
-
+console.log('filteredCards :>> ', filteredCards);
     // Looping through all cards and pulling each small img link, creating an img element and assigning the link to each tag
     const newImages = [];
     for (let i = 0; i < filteredCards.length; i++) {
@@ -45,6 +46,7 @@ function updateCardList() {
         newImages.push(image);
     }
     // cards-container (index.html) is updated with new images
+    const cardsContainer = document.getElementById("cards-container");
     cardsContainer.replaceChildren(...newImages);
 }
 
