@@ -7,10 +7,12 @@ body{
 }
 
 h1 {
-
+    
     font-size: 3rem;
     text-align: center;
     padding-left: 60px;
+    text-shadow: 2px 2px orange;
+    opacity: 0.8;
 }
 
 .logo {
@@ -41,9 +43,10 @@ h1 {
     gap:0.5em
 }
 
-
 .index-h2 {
-    color: white;
+    color: black;
+    text-shadow: 1px 1px orangered;
+    opacity: 0.8;
     text-align: center;
 }
 
@@ -62,7 +65,7 @@ h1 {
     background-color: #424949;
     color: white;
 }
-
+/* Show more, show less button  */
 #more {
     display: none;
 }
