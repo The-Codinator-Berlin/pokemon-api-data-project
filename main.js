@@ -1,10 +1,10 @@
 function fetchData() {
   fetch("https://api.pokemontcg.io/v2/cards")
   .then((response) => { return response.json()})
-  .then((test) => {
-    console.log("test", test);
-    updateCardList(test.data);
-    addEvents(test.data)
+  .then((pokeResult) => {
+    console.log("pokeResult", pokeResult);
+    updateCardList(pokeResult.data);
+    addEvents(pokeResult.data)
   })
   .catch(err => {
     console.log(err);
